@@ -1,0 +1,32 @@
+{
+    "name": "anomaly/authorizenet_gateway-extension",
+    "type": "streams-addon",
+    "description": "An Authorize.net gateway extension for the Payments module.",
+    "keywords": [
+        "streams-addon",
+        "payments",
+        "pyrocms",
+        "laravel"
+    ],
+    "homepage": "http://anomaly.is/",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "AnomalyLabs, Inc.",
+            "email": "hello@anomaly.is",
+            "homepage": "http://anomaly.is/",
+            "role": "Owner"
+        }
+    ],
+    "support": {
+        "email": "support@anomaly.is"
+    },
+    "autoload": {
+        "psr-4": {
+            "Anomaly\\AuthorizenetGatewayExtension\\": "src/"
+        }
+    },
+    "require": {
+        "omnipay/paypal": "^2.3"
+    }
+}
