@@ -23,10 +23,11 @@
     },
     "autoload": {
         "psr-4": {
-            "Anomaly\\AuthorizenetGatewayExtension\\": "src/"
+            "Anomaly\\AuthorizenetGatewayExtension\\": "src/",
+            "Omnipay\\AuthorizeNet\\": "vendor/omnipay/authorizenet/src/"
         }
     },
     "require": {
-        "omnipay/paypal": "^2.3"
+        "omnipay/authorizenet": "^2.3"
     }
 }

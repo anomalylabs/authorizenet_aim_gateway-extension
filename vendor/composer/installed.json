@@ -373,18 +373,18 @@
         ]
     },
     {
-        "name": "omnipay/paypal",
-        "version": "2.5.0",
-        "version_normalized": "2.5.0.0",
+        "name": "omnipay/authorizenet",
+        "version": "v2.3.0",
+        "version_normalized": "2.3.0.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/thephpleague/omnipay-paypal.git",
-            "reference": "67efe5a927dec13fc7520e29bc44f15fd3a728e9"
+            "url": "https://github.com/thephpleague/omnipay-authorizenet.git",
+            "reference": "142a95f550a5320db09e66019ecf5c8b8c3885b9"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/thephpleague/omnipay-paypal/zipball/67efe5a927dec13fc7520e29bc44f15fd3a728e9",
-            "reference": "67efe5a927dec13fc7520e29bc44f15fd3a728e9",
+            "url": "https://api.github.com/repos/thephpleague/omnipay-authorizenet/zipball/142a95f550a5320db09e66019ecf5c8b8c3885b9",
+            "reference": "142a95f550a5320db09e66019ecf5c8b8c3885b9",
             "shasum": ""
         },
         "require": {
@@ -393,17 +393,17 @@
         "require-dev": {
             "omnipay/tests": "~2.0"
         },
-        "time": "2015-11-11 21:48:00",
+        "time": "2015-07-15 18:11:17",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "2.3.x-dev"
+                "dev-master": "2.0.x-dev"
             }
         },
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
-                "Omnipay\\PayPal\\": "src/"
+                "Omnipay\\AuthorizeNet\\": "src/"
             }
         },
         "notification-url": "https://packagist.org/downloads/",
@@ -417,19 +417,20 @@
             },
             {
                 "name": "Omnipay Contributors",
-                "homepage": "https://github.com/thephpleague/omnipay-paypal/contributors"
+                "homepage": "https://github.com/thephpleague/omnipay-authorizenet/contributors"
             }
         ],
-        "description": "PayPal gateway for Omnipay payment processing library",
-        "homepage": "https://github.com/thephpleague/omnipay-paypal",
+        "description": "Authorize.Net gateway for the Omnipay payment processing library",
+        "homepage": "https://github.com/thephpleague/omnipay-authorizenet",
         "keywords": [
+            "authorize",
+            "authorize net",
+            "authorize.net",
             "gateway",
             "merchant",
             "omnipay",
             "pay",
-            "payment",
-            "paypal",
-            "purchase"
+            "payment"
         ]
     }
 ]
