@@ -23,7 +23,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Anomaly\\AuthorizenetAimGatewayExtension\\": "src/",
+            "Anomaly\\AuthorizenetGatewayExtension\\": "src/",
             "Omnipay\\AuthorizeNet\\": "vendor/omnipay/authorizenet/src/"
         }
     },
