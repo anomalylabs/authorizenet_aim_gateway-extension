@@ -1,8 +1,9 @@
 <?php namespace Anomaly\AuthorizenetGatewayExtension;
 
 use Anomaly\AuthorizenetGatewayExtension\Command\MakeAuthorizenetGateway;
-use Anomaly\PaymentsModule\Gateway\GatewayExtension;
-use Omnipay\AuthorizeNet\AIMGateway;
+use Anomaly\PaymentsModule\Gateway\Contract\GatewayInterface;
+use Anomaly\PaymentsModule\Gateway\Provider\ProviderExtension;
+use Omnipay\Common\AbstractGateway;
 
 /**
  * Class AuthorizenetGatewayExtension
@@ -12,7 +13,7 @@ use Omnipay\AuthorizeNet\AIMGateway;
  * @author        Ryan Thompson <ryan@anomaly.is>
  * @package       Anomaly\AuthorizenetGatewayExtension
  */
-class AuthorizenetGatewayExtension extends GatewayExtension
+class AuthorizenetGatewayExtension extends ProviderExtension
 {
 
     /**
@@ -24,11 +25,13 @@ class AuthorizenetGatewayExtension extends GatewayExtension
     protected $provides = 'anomaly.module.payments::payment_gateway.authorizenet';
 
     /**
-     * Return the gateway.
+     * Return an Omnipay gateway.
      *
-     * @return AIMGateway
+     * @param GatewayInterface $gateway
+     * @return AbstractGateway
+     * @throws \Exception
      */
-    public function make()
+    public function make(GatewayInterface $gateway)
     {
         return $this->dispatch(new MakeAuthorizenetGateway());
     }
