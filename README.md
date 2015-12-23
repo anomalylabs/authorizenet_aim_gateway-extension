@@ -1,3 +1,3 @@
-# Authorize.net Gateway Extension
+# Authorize.net AIM Gateway Extension
 
-An Authorize.net gateway extension for the Payments module.
+An Authorize.net AIM gateway extension for the Payments module.

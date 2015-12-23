@@ -1,7 +1,7 @@
 {
-    "name": "anomaly/authorizenet_gateway-extension",
+    "name": "anomaly/authorizenet_aim_gateway-extension",
     "type": "streams-addon",
-    "description": "An Authorize.net gateway extension for the Payments module.",
+    "description": "An Authorize.net AIM gateway extension for the Payments module.",
     "keywords": [
         "streams-addon",
         "payments",
@@ -23,7 +23,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Anomaly\\AuthorizenetGatewayExtension\\": "src/",
+            "Anomaly\\AuthorizenetAimGatewayExtension\\": "src/",
             "Omnipay\\AuthorizeNet\\": "vendor/omnipay/authorizenet/src/"
         }
     },
