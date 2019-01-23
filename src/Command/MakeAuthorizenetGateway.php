@@ -2,21 +2,18 @@
 
 use Anomaly\ConfigurationModule\Configuration\Contract\ConfigurationRepositoryInterface;
 use Anomaly\EncryptedFieldType\EncryptedFieldTypePresenter;
-use Anomaly\PaymentsModule\Gateway\Contract\GatewayInterface;
 use Anomaly\SettingsModule\Setting\Contract\SettingInterface;
-use Illuminate\Contracts\Bus\SelfHandling;
 use Omnipay\AuthorizeNet\AIMGateway;
-use Omnipay\AuthorizeNet\SIMGateway;
+use Omnipay\Common\GatewayInterface;
 
 /**
- * Class MakeAuthorizenetAimGateway
+ * Class MakeAuthorizenetGateway
  *
- * @link          http://anomaly.is/streams-platform
- * @author        AnomalyLabs, Inc. <hello@anomaly.is>
- * @author        Ryan Thompson <ryan@anomaly.is>
- * @package       Anomaly\AuthorizenetAimGatewayExtension\Command
+ * @link   http://pyrocms.com/
+ * @author PyroCMS, Inc. <support@pyrocms.com>
+ * @author Ryan Thompson <ryan@pyrocms.com>
  */
-class MakeAuthorizenetAimGateway implements SelfHandling
+class MakeAuthorizenetGateway
 {
 
     /**
@@ -40,7 +37,7 @@ class MakeAuthorizenetAimGateway implements SelfHandling
      * Handle the command.
      *
      * @param ConfigurationRepositoryInterface $configuration
-     * @return SIMGateway
+     * @return GatewayInterface
      */
     public function handle(ConfigurationRepositoryInterface $configuration)
     {
