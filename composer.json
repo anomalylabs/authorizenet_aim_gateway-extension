@@ -1,5 +1,5 @@
 {
-    "name": "anomaly/authorizenet_aim_gateway-extension",
+    "name": "anomaly/authorizenet_gateway-extension",
     "type": "streams-addon",
     "description": "An Authorize.net AIM gateway extension for the Payments module.",
     "keywords": [
