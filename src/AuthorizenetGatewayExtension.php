@@ -21,7 +21,7 @@ class AuthorizenetGatewayExtension extends GatewayExtension
      *
      * @var null|string
      */
-    protected $provides = 'anomaly.module.payments::gateway.authorizenet_aim';
+    protected $provides = 'anomaly.module.payments::gateway.authorizenet';
 
     /**
      * Return an Omnipay gateway.
