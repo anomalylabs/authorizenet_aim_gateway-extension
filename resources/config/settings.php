@@ -1,6 +1,9 @@
 <?php
 
 return [
+    'debug_mode'      => [
+        'type' => 'anomaly.field_type.boolean',
+    ],
     'api_login_id'    => [
         'required' => true,
         'type'     => 'anomaly.field_type.encrypted',

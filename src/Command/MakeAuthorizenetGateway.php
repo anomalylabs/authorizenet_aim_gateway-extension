@@ -1,8 +1,8 @@
-<?php namespace Anomaly\AuthorizenetAimGatewayExtension\Command;
+<?php namespace Anomaly\AuthorizenetGatewayExtension\Command;
 
-use Anomaly\ConfigurationModule\Configuration\Contract\ConfigurationRepositoryInterface;
 use Anomaly\EncryptedFieldType\EncryptedFieldTypePresenter;
 use Anomaly\SettingsModule\Setting\Contract\SettingInterface;
+use Anomaly\SettingsModule\Setting\Contract\SettingRepositoryInterface;
 use Omnipay\AuthorizeNet\AIMGateway;
 use Omnipay\Common\GatewayInterface;
 
@@ -17,53 +17,26 @@ class MakeAuthorizenetGateway
 {
 
     /**
-     * The gateway instance.
-     *
-     * @var GatewayInterface
-     */
-    protected $gateway;
-
-    /**
-     * Create a new MakePaypalGateway instance.
-     *
-     * @param GatewayInterface $gateway
-     */
-    public function __construct(GatewayInterface $gateway)
-    {
-        $this->gateway = $gateway;
-    }
-
-    /**
      * Handle the command.
      *
-     * @param ConfigurationRepositoryInterface $configuration
+     * @param SettingRepositoryInterface $settings
      * @return GatewayInterface
      */
-    public function handle(ConfigurationRepositoryInterface $configuration)
+    public function handle(SettingRepositoryInterface $settings)
     {
         /* @var EncryptedFieldTypePresenter $id */
         /* @var EncryptedFieldTypePresenter $key */
-        /* @var EncryptedFieldTypePresenter $secret */
         /* @var SettingInterface $mode */
-        $id   = $configuration->presenter(
-            'anomaly.extension.authorizenet_aim_gateway::api_login_id',
-            $this->gateway->getSlug()
-        );
-        $key  = $configuration->presenter(
-            'anomaly.extension.authorizenet_aim_gateway::transaction_key',
-            $this->gateway->getSlug()
-        );
-        $mode = $configuration->get(
-            'anomaly.extension.authorizenet_aim_gateway::test_mode',
-            $this->gateway->getSlug()
-        );
+        $debug = $settings->get('anomaly.extension.authorizenet_gateway::debug_mode');
+        $id    = $settings->presenter('anomaly.extension.authorizenet_gateway::api_login_id');
+        $key   = $settings->presenter('anomaly.extension.authorizenet_gateway::transaction_key');
 
         $gateway = new AIMGateway();
 
-        $gateway->setTransactionKey($key->decrypted());
-        $gateway->setDeveloperMode($mode->getValue());
-        $gateway->setApiLoginId($id->decrypted());
-        $gateway->setTestMode($mode->getValue());
+        $gateway->setTransactionKey($key->decrypt());
+        $gateway->setTestMode($debug->getValue());
+        $gateway->setApiLoginId($id->decrypt());
+        $gateway->setDeveloperMode(false);
 
         return $gateway;
     }

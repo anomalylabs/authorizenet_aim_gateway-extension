@@ -1,6 +1,6 @@
 <?php namespace Anomaly\AuthorizenetGatewayExtension;
 
-use Anomaly\AuthorizenetAimGatewayExtension\Command\MakeAuthorizenetGateway;
+use Anomaly\AuthorizenetGatewayExtension\Command\MakeAuthorizenetGateway;
 use Anomaly\PaymentsModule\Gateway\GatewayExtension;
 use Omnipay\Common\AbstractGateway;
 use Omnipay\Common\GatewayInterface;
@@ -14,6 +14,19 @@ use Omnipay\Common\GatewayInterface;
  */
 class AuthorizenetGatewayExtension extends GatewayExtension
 {
+
+    /**
+     * The supported methods.
+     *
+     * @var array
+     */
+    protected $supports = [
+        'authorize',
+        'purchase',
+        'refund',
+//        'create_card',
+//        'delete_card',
+    ];
 
     /**
      * This extension provides the Authorize.net
@@ -30,9 +43,9 @@ class AuthorizenetGatewayExtension extends GatewayExtension
      * @return AbstractGateway
      * @throws \Exception
      */
-    public function make(GatewayInterface $gateway)
+    public function omnipay()
     {
-        return $this->dispatch(new MakeAuthorizenetGateway($gateway));
+        return $this->dispatch(new MakeAuthorizenetGateway());
     }
 
 }

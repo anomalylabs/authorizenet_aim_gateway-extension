@@ -1,13 +1,13 @@
 <?php
 
 return [
-    'test_mode'       => [
-        'name' => 'Mode'
+    'debug_mode'      => [
+        'name' => 'Debug Mode',
     ],
     'api_login_id'    => [
-        'name' => 'API Login ID'
+        'name' => 'API Login ID',
     ],
     'transaction_key' => [
-        'name' => 'Transaction Key'
-    ]
+        'name' => 'Transaction Key',
+    ],
 ];
