@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'debug_mode'      => [
+    'test_mode'       => [
         'type' => 'anomaly.field_type.boolean',
     ],
     'api_login_id'    => [

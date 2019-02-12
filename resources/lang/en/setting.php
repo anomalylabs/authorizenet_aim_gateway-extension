@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'debug_mode'      => [
-        'name' => 'Debug Mode',
+    'test_mode'       => [
+        'name' => 'Test Mode',
     ],
     'api_login_id'    => [
         'name' => 'API Login ID',
